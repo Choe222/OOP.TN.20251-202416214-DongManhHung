@@ -3,7 +3,7 @@ package com.hust.kstn.models;
 import java.util.*;
 
 public class Cart {
-	private static final int MAX_NUMBER_ORDERED = 20;
+	private static final int MAX_NUMBER_ORDERED = 2;
 	private int qtyOrdered;
 	private DigitalVideoDisc[] itemsInCart = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
 	
@@ -17,6 +17,32 @@ public class Cart {
         }
     }
 	
+    public void addDVD(DigitalVideoDisc disc1, DigitalVideoDisc disc2) {
+    	if(qtyOrdered + 2 > MAX_NUMBER_ORDERED) {
+            System.out.println("The cart is almost full");
+    	}else {
+            itemsInCart[qtyOrdered] = disc1;
+            itemsInCart[qtyOrdered + 1] = disc2;
+            qtyOrdered = qtyOrdered + 2;
+            System.out.println("The discs has been added sucessfully");
+    	}
+    }
+    
+    public void addDVD(DigitalVideoDisc[] discs) {
+    	int n = discs.length;
+		
+    	if(qtyOrdered + n > MAX_NUMBER_ORDERED) {
+            System.out.println("The cart is almost full");
+    	}else {
+    		for(int i = 0; i < n; i++) {
+    			itemsInCart[qtyOrdered] = discs[i];
+    			qtyOrdered++;
+    		}
+            System.out.println("The discs has been added sucessfully");
+    	}
+    }
+    
+    
     public void removeDVD(DigitalVideoDisc disc) {
         if (qtyOrdered == 0) {
             System.out.println("The cart is empty");
@@ -52,10 +78,14 @@ public class Cart {
 	}
 	
 	public void print() {
-		System.out.println("=== Total items in cart: " + qtyOrdered + " ===");
-		System.out.println("=== All items in cart ===");
-		for(int i = 0 ; i < qtyOrdered; i++) {
-			System.out.println("[Title]: " + itemsInCart[i].getTitle() + ", " + "[Cost]: " + itemsInCart[i].getCost());
+		if(qtyOrdered == 0) {
+			System.out.println("Your cart is empty");
+		}else {
+			System.out.println("=== Total items in cart: " + qtyOrdered + " ===");
+			System.out.println("=== All items in cart ===");
+			for(int i = 0 ; i < qtyOrdered; i++) {
+				System.out.println("[Title]: " + itemsInCart[i].getTitle() + ", " + "[Cost]: " + itemsInCart[i].getCost());
+			}	
 		}
 	}
 	

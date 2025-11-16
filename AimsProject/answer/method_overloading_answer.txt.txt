@@ -1,0 +1,3 @@
+Question: Chuyện gì xảy ra khi thêm phương thức này, tại sao? Bạn lựa chọn phương án nào để giải quyết?
+- Khi thêm phương thức này sẽ bị lỗi do hai hàm trên có method signature trùng nhau: DigitalVideoDisc[] và DigitalVideoDisc... discs được xem là cùng kiểu tham số vì varargs được biên dịch thành DigitalVideoDisc[].
+- Để giải quyết phải chọn xóa một trong hai method.

@@ -17,11 +17,7 @@ public class Aims {
                 "Son Tung MTP", 84, 18.95);
         
         cart.addDVD(dvd1);
-        cart.addDVD(dvd2);
-        cart.addDVD(dvd3);
-        cart.calculateTotalCost();
-
-        cart.sortTitle();
-        cart.sortCost();
+        cart.addDVD(dvd3,dvd2);
+        cart.print();
     }
 }
