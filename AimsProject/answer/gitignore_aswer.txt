@@ -1,0 +1,20 @@
+1.Tại sao những đường dẫn trên nên được thêm vào .gitignore (nếu không thêm thì sao)?
+
+- Đây đều là thư mục do Eclipse sinh ra.
+- Chúng phụ thuộc vào máy hoặc là IDE, có thể tự sinh lại từ source vì thế không cần lưu vào repo.
+- Nếu không ignore: repo sẽ đầy file rác, dễ sinh conflict cấu hình giữa các máy, và mỗi lần build là lại có thay đổi vì thế không cần thiết.
+
+2. Nếu sử dụng những công cụ khác để lập trình Java (như IntelliJ IDEA hoặc VSCode), những đường dẫn nào sẽ được thêm vào .gitignore?
+
+- Các công cụ lập trình sẽ có những thư mục output (class, jar tạm, log) và file cấu hình IDE riêng của từng máy.Eg:
+	+ IntelliJ: /.idea/, *.iml, thư mục build : /out/, /build/, /target/…
+	+ VSCode: /.vscode/, thư mục build : (/bin/, /build/, /target/…)
+
+3. Trong trường hợp bạn đã lỡ commit các file tạm lên Git, nhưng sau đó bạn đã thêm chúng vào .gitignore và muốn Git ngừng theo dõi chúng mà không xóa khỏi máy, bạn sẽ cần thực hiện những thao tác nào?
+
+	- B1: Gỡ file ra khỏi index nhưng giữ lại trên ổ đĩa:
+	+ Chạy lệnh để Git ngừng theo dõi các file/thư mục đã lỡ commit: git rm -r --cached .settings bin .classpath .project (vd 	với các file trong project)
+	+ Lệnh này chỉ xóa file khỏi index và commit tiếp theo, không xóa file thật trong ổ đĩa.
+	- B2: Tạo commit mới để cập nhật thay đổi
+	+ git commit -m "..."
+	+ git push
