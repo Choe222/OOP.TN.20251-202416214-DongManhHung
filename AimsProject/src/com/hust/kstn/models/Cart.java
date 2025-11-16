@@ -70,7 +70,7 @@ public class Cart {
     }
 	
 	public double calculateTotalCost() {
-		double res = 0.0;
+		double res = 0;
 		for(int i = 0; i < qtyOrdered; i++) {
 			res += itemsInCart[i].getCost();
 		}

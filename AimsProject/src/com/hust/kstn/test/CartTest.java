@@ -15,7 +15,7 @@ public class CartTest {
         	    new DigitalVideoDisc("Forrest Gump", "Drama", "Robert Zemeckis", 142, 12.99),
         	    new DigitalVideoDisc("Inception", "Sci-Fi", "Christopher Nolan", 148, 16.50),
         	};
-        
+
         //Remove empty cart
         cart.removeDVD(dvd1);
         
