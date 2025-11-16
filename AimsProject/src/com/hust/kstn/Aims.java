@@ -15,9 +15,8 @@ public class Aims {
         
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("The Lion King", "Science Fiction",
                 "Son Tung MTP", 84, 18.95);
-        
-        cart.addDVD(dvd1);
-        cart.addDVD(dvd3,dvd2);
+
+        cart.addDVD(dvd1, dvd3);
         cart.print();
     }
 }

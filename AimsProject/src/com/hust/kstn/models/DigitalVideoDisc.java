@@ -8,6 +8,7 @@ public class DigitalVideoDisc {
 	private double cost;
 	private static int nbDigitalVideoDiscs = 0;
 	private int id;
+	
 	public DigitalVideoDisc(String title) {
 		this.title = title;
 	}
@@ -38,5 +39,15 @@ public class DigitalVideoDisc {
 	public double getCost() {
 		return cost;
 	}
-	
+	//- DVD[ID] – [Title] – [Cost] – [Length] – [Category] – [Director] 
+	@Override 
+	public String toString() { 
+	return "- DVD" + "[" + this.id + "] " 
+		+ "- [" + this.title + "] " 
+		+ "- [" + this.cost + "] " 
+		+ "- [" + this.length + "] " 
+		+ "- [" + this.category + "] " 
+		+ "- [" + this.director + "]"; 
+
+	} 
 }
