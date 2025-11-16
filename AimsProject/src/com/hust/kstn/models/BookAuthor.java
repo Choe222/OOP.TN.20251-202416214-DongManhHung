@@ -15,8 +15,8 @@ public class BookAuthor {
 	@Override 
 	public String toString() { 
 		return this.fullName + " ("  
-		+ this.yearOfBirth + ", " 
-		+ this.shortBiography + ")\n"; 
+				+ this.yearOfBirth + ", " 
+				+ this.shortBiography + ")\n"; 
 	}
 
 	public String getFullName() {

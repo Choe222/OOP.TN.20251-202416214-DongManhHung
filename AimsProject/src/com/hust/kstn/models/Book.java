@@ -39,12 +39,12 @@ public class Book {
 	}
 	@Override 
 	public String toString() { 
-	return "Book[" + this.id + "]["  
-	+ this.title + "]["  
-	+ this.cost + "]["  
-	+ this.category + "][" 
-	+ this.numOfTokens + "]" 
-	+ "\nAuthors: " + this.authors; 
+		return "Book[" + this.id + "]["  
+				+ this.title + "]["  
+				+ this.cost + "]["  
+				+ this.category + "][" 
+				+ this.numOfTokens + "]" 
+				+ "\nAuthors: " + this.authors; 
 	}
 	public void print() {
 		System.out.println(this.toString());
