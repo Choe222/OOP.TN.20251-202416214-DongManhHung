@@ -1,53 +1,26 @@
 package com.hust.kstn.models;
 
-public class DigitalVideoDisc {
-	private String title;
-	private String category;
-	private String director;
+import java.util.ArrayList;
+import java.util.List;
+
+public class DigitalVideoDisc extends Disc {
 	private int length;
-	private double cost;
-	private static int nbDigitalVideoDiscs = 0;
-	private int id;
 	
 	public DigitalVideoDisc(String title) {
-		this.title = title;
+		super(title, "", 0.0, new ArrayList<>());
 	}
-	public DigitalVideoDisc(String title, String category, String director, int length, double cost) {
-		this.title = title;
-		this.category = category;
-		this.director = director;
+	public DigitalVideoDisc(String title, String category, List<String> director, int length, double cost) {
+	    super(title, category, cost, director);
 		this.length = length;
-		this.cost = cost;
-		nbDigitalVideoDiscs++;
-		this.id = nbDigitalVideoDiscs;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public String getCategory() {
-		return category;
-	}
-	public String getDirector() {
-		return director;
 	}
 	public int getLength() {
 		return length;
 	}
-	public int getId() {
-		return id;
-	}
-	public double getCost() {
-		return cost;
-	}
-	//- DVD[ID] – [Title] – [Cost] – [Length] – [Category] – [Director] 
 	@Override 
 	public String toString() { 
-	return "- DVD" + "[" + this.id + "] " 
-		+ "- [" + this.title + "] " 
-		+ "- [" + this.cost + "] " 
-		+ "- [" + this.length + "] " 
-		+ "- [" + this.category + "] " 
-		+ "- [" + this.director + "]"; 
+		return super.toString()  
+				+ "\nLength: [" + this.length + "] ";  
+
 
 	} 
 }

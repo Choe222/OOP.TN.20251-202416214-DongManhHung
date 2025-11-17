@@ -1,0 +1,7 @@
+Câu hỏi 1: Hãy nêu ý nghĩa của từ khóa super trong ví dụ cho mã nguồn của lớp Book ở phía trên.
+-Trong ví dụ lớp Book, từ khóa super được dùng để gọi constructor và phương thức của lớp cha Media.
+- super(title, cost, category) gọi constructor của lớp cha nhằm khởi tạo các thuộc tính kế thừa như title, cost và category trước khi khởi tạo các thuộc tính riêng của Book.
+- super.toString() gọi phương thức của lớp cha. 
+Câu hỏi 2: "Tại sao java chỉ hỗ trợ đơn kế thừa(mà không phải đa kế thừa như những ngôn ngữ lập trình khác như Cpp)?"
+- Java chỉ hỗ trợ đơn kế thừa vì để tránh “diamond problem” – tình huống một lớp kế thừa từ hai lớp cha có cùng phương thức/thuộc tính, khiến trình biên dịch không biết chọn phiên bản nào.
+- Java muốn thiết kế hệ thống đơn giản, rõ ràng, an toàn hơn C++ nên bỏ đa kế thừa lớp và dùng interface để thay thế (đa kế thừa hành vi mà không gây xung đột trạng thái).
