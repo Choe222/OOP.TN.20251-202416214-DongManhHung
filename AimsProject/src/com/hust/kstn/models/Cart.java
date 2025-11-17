@@ -3,7 +3,7 @@ package com.hust.kstn.models;
 import java.util.*;
 
 public class Cart {
-	private static final int MAX_NUMBER_ORDERED = 2;
+	private static final int MAX_NUMBER_ORDERED = 20;
 	private int qtyOrdered;
 	private DigitalVideoDisc[] itemsInCart = new DigitalVideoDisc[MAX_NUMBER_ORDERED];
 	
