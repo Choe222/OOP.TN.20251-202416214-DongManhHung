@@ -1,0 +1,68 @@
+1. Tại sao sau khi chạy phương thức swap(s1,s2) thì tên của hai học sinh vẫn không thay đổi? Từ đó, Java là ngôn ngữ truyền tham trị hay truyền tham chiếu?
+- Khi chạy method swap(s1,s2) mà tên vẫn không đổi là do khi gọi phương thức này, bản sao của s1 và s2 lần lượt được chép vào o1 và o2 -> khi chạy chương trình chỉ có o1 và o2 thay đổi thôi còn s1, s2 vẫn giữ nguyên.
+- Từ đó java là ngôn ngữ truyền tham trị. 
+2. Bạn làm thế nào để phương thức swap hoạt động (thật sự tráo đổi thông tin của hai đối tượng được truyền vào)? 
+- Em sẽ swap các thuộc tính của hai đối tượng này:
+B1: Build các hàm getter và setter của đối tượng cần swap;
+B2: Viết phương thức swap:
+//Ví dụ với đối tượng Student trong file, đối với các đối tượng khác tương tự. 
+public static void swap(Student s1, Student s2) {
+	int id_temp = s2.getStudentId();
+	String name_temp = s2.getName();
+	s2.setStudentId(s1.getStudentId());
+	s2.setName(s1.getName());
+	s1.setStudentId(id_temp);
+	s1.setName(name_temp);
+}
+3. Vẽ sơ đồ minh họa cho các vùng nhớ stack và heap trong trường hợp này để chứng minh cách bạn đưa ra đã hoạt động đúng. 
+ 
+Ban đầu
+
+   stack             heap
+-----------      -------------
+    s1     ---->    (1,"A")         
+-----------      -------------
+    s2     ---->    (2,"B")
+-----------      -------------
+
+int id_temp = s2.getStudentId();
+String name_temp = s2.getName();
+
+   stack             heap
+-----------      -------------
+    s1     ---->    (1,"A")         
+-----------      -------------
+    s2     ---->    (2,"B")
+-----------      -------------
+id_temp = 2          
+-----------      
+name_temp ="B"        
+----------- 
+
+s2.setStudentId(s1.getStudentId());
+s2.setName(s1.getName());
+
+   stack             heap
+-----------      -------------
+    s1     ---->    (1,"A")         
+-----------      -------------
+    s2     ---->    (1,"A")
+-----------      -------------
+id_temp = 2          
+-----------      
+name_temp ="B"        
+----------- 
+
+s1.setStudentId(id_temp);
+s1.setName(name_temp);
+
+   stack             heap
+-----------      -------------
+    s1     ---->    (2,"B")         
+-----------      -------------
+    s2     ---->    (1,"A")
+-----------      -------------
+id_temp = 2          
+-----------      
+name_temp ="B"        
+-----------     
