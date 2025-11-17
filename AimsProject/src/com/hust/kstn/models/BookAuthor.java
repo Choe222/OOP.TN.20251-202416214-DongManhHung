@@ -6,7 +6,6 @@ public class BookAuthor {
 	private String shortBiography; 
 
 	public BookAuthor(String fullName, int yearOfBirth, String shortBiography) {
-		super();
 		this.fullName = fullName;
 		this.yearOfBirth = yearOfBirth;
 		this.shortBiography = shortBiography;
